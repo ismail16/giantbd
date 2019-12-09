@@ -10,32 +10,23 @@ Route::get('/join_us', 'Frontend\PagesController@join_us')->name('join_us');
 Route::get('/our_pride_bangladesh', 'Frontend\PagesController@our_pride_bangladesh')->name('our_pride_bangladesh');
 Route::get('/contact', 'Frontend\PagesController@contact')->name('contact');
 Route::get('/admin-login', 'Frontend\PagesController@login')->name('admin.login');
+Route::get('/news_details', 'Frontend\PagesController@news_details')->name('news_details');
+Route::get('/single_news/{id}', 'Frontend\PagesController@single_news')->name('single_news');
 
-
-// Route::get('/', function () {
-//     return view('welcome');
-// });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('dashboard');
-
-
-
-
 // //======================================== Admin route==================================
-// Route::group(['as' => 'admin.', 'prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['auth', 'admin']], function () {
-//     Route::get('dashboard', 'DashboardController@index')->name('dashboard');
+Route::group(['as' => 'admin.', 'prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['auth', 'admin']], function () {
+    Route::get('dashboard', 'DashboardController@index')->name('dashboard');
 
-//     Route::resource('contact', 'ContactController');
-// });
+    Route::resource('news', 'NewsController');
+    Route::resource('gallery-image', 'GalleryImageController');
+    Route::resource('cv', 'CvController');
+});
 
 // //======================================== Author route==================================
-// Route::group(['as' => 'author.', 'prefix' => 'author', 'namespace' => 'Author', 'middleware' => ['auth', 'author']], function () {
-//     Route::get('dashboard', 'DashboardController@index')->name('dashboard');
-//     Route::get('submission-guideline', 'DashboardController@submission_guideline')->name('submission_guideline');
-//     Route::resource('profile', 'ProfileController');
-//     Route::resource('paper-submission', 'SubmitController');
-
-// });
+Route::group(['as' => 'author.', 'prefix' => 'author', 'namespace' => 'Author', 'middleware' => ['auth', 'author']], function () {
+	Route::get('dashboard', 'DashboardController@index')->name('dashboard');
+});
 

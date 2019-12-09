@@ -1,5 +1,5 @@
 @extends('website.layouts.master')
-
+{{-- https://github.com/sachinchoolur/lightGallery --}}
 @section('content')
 <div class="container giant_wrap" style="padding-left: 50px; padding-right: 50px;" id="section-counter">
         <div class="row" id="next_section">
@@ -243,13 +243,30 @@
                     <div class="row">
                         <div id="lightgallery" class="col-md-12 thumbnailsclients" style="height: 620px; overflow: auto; margin-bottom: 5rem;">
 
-                                <div class=" Textile col-sm-3 col-xs-12 g_filter> overlay"  data-responsive="">
+                                @foreach($gallery_images as  $gallery_image)
+
+
+                                 <div class=" Textile col-sm-3 col-xs-12 g_filter {{ $gallery_image->category}} overlay"  data-responsive="{{asset('images/gallery_image/'.$gallery_image->gallery_image)}}" data-src="{{asset('images/gallery_image/'.$gallery_image->gallery_image)}}">
                                     <div class="gallery_product">
-                                        <a class="fancybox thumbnail" rel="ligthbox" href="">
-                                            <img class="img-responsive imageclient1" alt="" src="" />
+                                        <a class="fancybox thumbnail" rel="ligthbox" href="{{asset('images/gallery_image/'.$gallery_image->gallery_image)}}">
+                                            <img class="img-responsive imageclient1" alt="" src="{{asset('images/gallery_image/'.$gallery_image->gallery_image)}}" />
                                         </a>
                                     </div>
                                 </div>
+
+                            {{--     <div class=" Textile col-sm-3 col-xs-12 g_filter> overlay"  data-responsive="">
+                                    <div class="gallery_product">
+                                        <a class="fancybox thumbnail" rel="ligthbox" href="">
+                                            <img class="img-responsive imageclient1" alt="" src="{{asset('images/gallery_image/'.$gallery_image->gallery_image)}}" />
+                                        </a>
+                                    </div>
+                                </div> --}}
+
+
+
+
+                                @endforeach
+
                         </div>
                         <div style="display: none;" class="load_more_tour load_more" id="load_more_tour"><span style="padding: 10px; background-color: #000000; color: #fff; font-size: 15px; border-radius: 5px;">View More</span></div>
                     </div>

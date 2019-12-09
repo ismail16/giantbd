@@ -78,7 +78,7 @@
         <div class="pull-right hidden-xs">
 
         </div>
-        <strong>Copyright &copy; 2019-2020 <a href="{{url('/')}}" target="_blank">JHMJ</a>.</strong> All rights
+        <strong>Copyright &copy; 2019-2020 <a href="{{url('/')}}" target="_blank">WebX</a>.</strong> All rights
         reserved.
     </footer>
 </div>
@@ -127,6 +127,7 @@
     $('.my-colorpicker1').colorpicker()
 </script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8/dist/sweetalert2.min.js"></script>
+
 @stack('scripts')
 <script>
     // Image brows, live show

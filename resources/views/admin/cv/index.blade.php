@@ -2,10 +2,10 @@
 
 @section('breadcumb')
     <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}"><i class="fa fa-dashboard"></i> Home</a></li>
-    <li class="breadcrumb-item active"><a href="{{route('admin.apc.index')}}">Announcements</a></li>
+    <li class="breadcrumb-item active"><a href="{{route('admin.cv.index')}}">Cv</a></li>
 @endsection
 
-@section('title', 'Announcements')
+@section('title', 'Cvs')
 
 @push('css')
     <link rel="stylesheet" href="{{asset('admin/bower_components/datatables-bs/css/dataTables.bootstrap.min.css')}}">
@@ -23,21 +23,20 @@
 @endpush
 
 @section('content')
+    @if ($message = Session::get('success'))
+        <div style="text-align: -webkit-center; position: absolute; top: 54px; left: 25%; width: 60%;">
+            <div class="alert alert-success " style="width: 30%;padding: 3px 10px;margin: 0px;text-align: center;">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                    {{ $message }}
+            </div>
+        </div>
+    @endif
 
     <div class="row">
-        @if(session()->has('message'))
-            <div class="col-lg-12 col-xl-12">
-                <div class="card-box">
-                    <div class="alert alert-danger">
-                        {{session('message')}}
-                    </div>
-                </div>
-            </div>
-        @endif
         <div class="col-xs-12">
             <div class="box">
                 <div class="box-body">
-                    <a href="{{route('admin.announcement.create')}}" class="pull-right btn btn-xs btn-primary"> <i
+                    <a href="{{route('admin.cv.create')}}" class="pull-right btn btn-xs btn-primary"> <i
                                 class="fa fa-plus"></i> Add New</a>
                     <br>
                     <br>
@@ -45,24 +44,28 @@
                         <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Title</th>
-                            <th>Creation Date</th>
-                            <th>status</th>
+                            <th>Name</th>
+                            <th>Mobile</th>
+                            <th>email</th>
+                            <th>Department</th>
+                            <th>Date</th>
+                            <th>Action</th>
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($announcements as $announcement)
+                        @foreach($cvs as $cv)
                             <tr>
                                 <td>{{$loop->index+1}}</td>
-                                <td>
-                                    <img height="65" width="100" src="{{asset('images/announcements/'.$announcement->image)}}"
-                                         alt="{{$announcement->title}}">
-                                </td>
-                                <td>{{$announcement->title}}</td>
+                                <td>{{$cv->name}}</td>
+                                <td>{{$cv->mobile}}</td>
+                                <td>{{$cv->email}}</td>
+                                <td>{{$cv->department}}</td>
+
+                                <td>{{$cv->created_at->format('d M Y')}}</td>
                                 <td class="text-center">
-                                    <a href="{{route('admin.announcement.edit', $announcement->id)}}"
-                                       class="btn btn-xs btn-success"><i class="fa fa-edit"></i></a>
-                                    <form action="{{route('admin.announcement.destroy', $announcement->id)}}" method="post"
+                                    <a href="{{ asset('file/cv/'.$cv->cv) }}" target="_blank" 
+                                       class="btn btn-xs btn-primary"><i class="fa fa-cloud-download"></i></a>
+                                    <form action="{{ route('admin.cv.destroy',$cv->id ) }}" method="post"
                                           style="display: inline;"
                                           onsubmit="return confirm('Are you Sure? Want to delete')">
                                         @csrf

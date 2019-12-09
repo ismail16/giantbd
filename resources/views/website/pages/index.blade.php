@@ -30,7 +30,7 @@
                             <h2 class="heading-secondary" style="color: #ff224d;">Who we are </h2><br>
                             <p class="text-yellow">We are a family | Knitting large dreams | Sewing a Giant future<br><br>
                                 We started our journey back in 1984 with the dream of being the best company in the industry. We have managed to sustain in this industry because of our hard work and dedication towards continuous improvement. Giant Group considers itself as an end-to-end apparel solution provider. Over the years, our size has changed, but one underlying idea has stayed the same – the customer and the environment are at the center of everything we do. We consider our skilled workforce to be our greatest asset. We take great pride in our people, our Giant family who we consider to be committed, talented and experts at what they do.<br>
-                                <a href="http://giantbd.com/profile">See more...</a> </p>
+                                <a href="{{ route('profiles') }}">See more...</a> </p>
                             <div class="mt-90">
                             </div>
                         </div>
@@ -60,7 +60,7 @@
                         <div class="child-stagger-up" data-scrollmagic>
                             <h2 class="heading-secondary" style="color:green;">Sustainability strategy</h2><br>
                             <p class="text-yellow">Dream it | Believe it | Achieve it<br><br>
-                                 Our organization seeks to minimize waste, promote recycling, reduce energy consumption, reduce harmful emissions and, where possible, to work with suppliers who are committed to caring and protecting for the environment. The organization ensures that all its activities are carried out in conformance with the relevant environmental legislation and the requirements of Ministry of Environment and Forest, Directorate of Environment, Government of the People’s Republic of Bangladesh. <a href="http://giantbd.com/sustainable_strategy">See more...</a> </p>
+                                 Our organization seeks to minimize waste, promote recycling, reduce energy consumption, reduce harmful emissions and, where possible, to work with suppliers who are committed to caring and protecting for the environment. The organization ensures that all its activities are carried out in conformance with the relevant environmental legislation and the requirements of Ministry of Environment and Forest, Directorate of Environment, Government of the People’s Republic of Bangladesh. <a href="{{ route('sustainable_strategy') }}">See more...</a> </p>
                                 <div class="mt-90">
                                 </div>
                         </div>
@@ -180,7 +180,7 @@
                         <div class="child-stagger-up" data-scrollmagic>
                             <h2 class="heading-secondary" style="color:green;">Take a tour</h2><br>
                             <p class="text-yellow">Giant was born in a country that struggled through a hard-won Independence; 
-                            We give back to the society more than what we take from it. We make textiles, and we foster people. Where social and environmental impact are as important as growth. Where people’s enterprise & creativity are more valuable than the machines they work with. Where the well-being of employees extends to caring for their loved ones as well. We are Giant. Several victories, countless memories. And this is our story, through pictures. <a href="http://giantbd.com/take_a_tour">See more...</a> </p>
+                            We give back to the society more than what we take from it. We make textiles, and we foster people. Where social and environmental impact are as important as growth. Where people’s enterprise & creativity are more valuable than the machines they work with. Where the well-being of employees extends to caring for their loved ones as well. We are Giant. Several victories, countless memories. And this is our story, through pictures. <a href="{{ route('take_a_tour') }}">See more...</a> </p>
                                 <div class="mt-90">
                                 </div>
                         </div>
@@ -197,39 +197,31 @@
                 <h2 style="margin-left: 85px;" class="heading-secondary text-yellow mb-60">News &amp; Publications </h2>
                 <div class="col-xs-12 col-sm-12 col-md-8">
                     <div class="row">
-                        <div class="col-xs-12 col-sm-6 col-md-6">
-                            <div class="news-box">
-                                <figure>
-                                    <a href="">
-                                        <img class="img-responsive" src=""
-                                            alt="news"> </a>
-                                </figure>
-                                <div class="news-content">
-                                    <span>date</span>
-                                    <h2>
-                                        <a style="color: white;" href="">sdfghjksdfghjkl</a>
-                                    </h2>
+                        @php $count = 0; @endphp
+
+                        @foreach($news as $new)
+                            @if($count< 2)
+                                <div class="col-xs-12 col-sm-6 col-md-6">
+                                    <div class="news-box">
+                                        <figure>
+                                            <a href="{{ route('single_news', $new->id) }}">
+                                                <img class="img-responsive" src="{{asset('images/news/'.$new->image)}}"
+                                                    alt="news"> </a>
+                                        </figure>
+                                        <div class="news-content">
+                                            <span>{{ $new->created_at->format('d M Y') }}</span>
+                                            <h2>
+                                                <a style="color: white;" href="{{ route('single_news', $new->id) }}">{{ $new->title }}</a>
+                                            </h2>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 col-md-6">
-                            <div class="news-box">
-                                <figure>
-                                    <a href="">
-                                        <img class="img-responsive" src=""
-                                            alt="news"> </a>
-                                </figure>
-                                <div class="news-content">
-                                    <span>date</span>
-                                    <h2>
-                                        <a style="color: white;" href="">sdfghjksdfghjkl</a>
-                                    </h2>
-                                </div>
-                            </div>
-                        </div>
+                            @endif
+                            @php $count++  @endphp
+                        @endforeach
                     </div>
                     <p style="margin-left: 34px;">
-                        <a href="/news_details" class="view-all view_all_margin"> View all news</a>
+                        <a href="{{ route('news_details') }}" class="view-all view_all_margin"> View all news</a>
                     </p>
                 </div>
                 <div class="col-sm-12 col-xs-12 col-md-4">
@@ -244,52 +236,26 @@
                         </ul>
                         <div class="tab-content">
                             <div style="height: 283px; overflow: auto;" role="tabpanel" class="tab-pane in fade active" id="testTalk">
-                                <div class="media">
-                                    <div class="media-left">
-                                        <div class="event-date">
-                                            <strong>date</strong>
-                                            <b>date</b>
+                                @foreach($news as $new)
+                                    <div class="media">
+                                        <div class="media-left">
+                                            <div class="event-date">
+                                                <strong>{{ $new->created_at->format('d') }}</strong>
+                                                <b>date</b>
+                                            </div>
+                                        </div>
+                                        <div class="media-body">
+                                            <a  href="{{ route('single_news', $new->id) }}">
+                                                <h4 class="media-heading">{{ $new->title }}</h4>
+                                                <p>{{ $new->created_at->format('d M Y') }}</p>
+                                            </a>
                                         </div>
                                     </div>
-                                    <div class="media-body">
-                                        <a  href="ffffff">
-                                            <h4 class="media-heading">title</h4>
-                                            <p>date</p>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="media">
-                                    <div class="media-left">
-                                        <div class="event-date">
-                                            <strong>date</strong>
-                                            <b>date</b>
-                                        </div>
-                                    </div>
-                                    <div class="media-body">
-                                        <a  href="ffffff">
-                                            <h4 class="media-heading">title</h4>
-                                            <p>date</p>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="media">
-                                    <div class="media-left">
-                                        <div class="event-date">
-                                            <strong>date</strong>
-                                            <b>date</b>
-                                        </div>
-                                    </div>
-                                    <div class="media-body">
-                                        <a  href="ffffff">
-                                            <h4 class="media-heading">title</h4>
-                                            <p>date</p>
-                                        </a>
-                                    </div>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
                         <p>
-                            <a href="/news_details" class="view-all"> view all Publications</a>
+                            <a href="{{ route('news_details') }}" class="view-all"> view all Publications</a>
                         </p>
                     </div>
                 </div>

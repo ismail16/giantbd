@@ -3,7 +3,7 @@
     <a href="" class="logo" style="position: fixed !important;">
         <!-- mini logo for sidebar mini 50x50 pixels -->
         <span class="logo-mini">
-            <img data-cfsrc="{{asset('images/logos/jhhj.png')}}"alt="JHMJ" title="JHMJ Open Access Journals" data-cfstyle="height: 30px;" style="height: 30px;" src="{{asset('images/logos/jhhj.png')}}">
+            <img data-cfsrc="https://anotherjavaduke.files.wordpress.com/2018/08/avataaars-2.png"alt="JHMJ" title="JHMJ Open Access Journals" data-cfstyle="height: 30px;" style="height: 30px;" src="https://anotherjavaduke.files.wordpress.com/2018/08/avataaars-2.png">
         </span>
         <!-- logo for regular state and mobile devices -->
         <span class="logo-lg">Dashboard</span>
@@ -35,13 +35,13 @@
                 <!-- User Account: style can be found in dropdown.less -->
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <img src="{{asset('images/default.png')}}" class="user-image" alt="User Image">
+                        <img src="https://anotherjavaduke.files.wordpress.com/2018/08/avataaars-2.png" class="user-image" alt="User Image">
                         <span class="hidden-xs">{{Auth::user()->name}}</span>
                     </a>
                     <ul class="dropdown-menu">
                         <!-- User image -->
                         <li class="user-header">
-                            <img src="{{asset('images/default.png')}}" class="img-circle" alt="User Image">
+                            <img src="https://anotherjavaduke.files.wordpress.com/2018/08/avataaars-2.png" class="img-circle" alt="User Image">
                             <p>
                                 {{Auth::user()->name}} - Admin
                                 <small>Since Jan. 2019</small>

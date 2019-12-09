@@ -4,14 +4,13 @@
         <!-- Sidebar user panel -->
         <div class="user-panel">
             <div class="pull-left image">
-                <img src="{{asset('images/default.png')}}" class="img-circle" alt="User Image">
+                <img src="https://anotherjavaduke.files.wordpress.com/2018/08/avataaars-2.png" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
                 <p>{{Auth::user()->name}}</p>
                 <a href=""><i class="fa fa-circle text-success"></i> Online</a>
             </div>
         </div>
-        <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu" data-widget="tree">
             <li class="header"> Dashboard Section</li>
             <li class="{{Request::is('admin/dashboard')? 'active':''}}">
@@ -20,26 +19,42 @@
                 </a>
             </li>
 
+            <li class="treeview" style="height: auto;">
+                <a href="#">
+                    <i class="fa fa-bullhorn"></i> <span>News</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu" style="display: none;">
+                    <li><a href="{{ route('admin.news.create') }}"><i class="fa fa-circle-o"></i>Add News</a></li>
+                    <li><a href="{{ route('admin.news.index') }}"><i class="fa fa-circle-o"></i>Manage News</a></li>
+                </ul>
+            </li>
 
-{{--            <li class="{{Request::is('admin/refundPolicy*')? 'active':''}}">--}}
-{{--                <a href="{{route('admin.refundPolicy.index')}}">--}}
-{{--                    <i class="fa fa-file-pdf-o"></i>--}}
-{{--                    <span> Refund Policy</span>--}}
-{{--                </a>--}}
-{{--            </li>--}}
-{{--            <li class="{{Request::is('admin/delivery-policy*')? 'active':''}}">--}}
-{{--                <a href="{{route('admin.delivery-policy.index')}}">--}}
-{{--                    <i class="fa fa-file-pdf-o"></i>--}}
-{{--                    <span> Delivery Policy</span>--}}
-{{--                </a>--}}
-{{--            </li>--}}
-{{--            <li class="{{Request::is('admin/delivery-web*')? 'active':''}}">--}}
-{{--                <a href="{{route('admin.indexweb')}}">--}}
-{{--                    <i class="fa fa-comments-o"></i>--}}
-{{--                    <span>Delivery Policy Web</span>--}}
-{{--                </a>--}}
-{{--            </li>--}}
+            <li class="">
+                <a href="{{ route('admin.cv.index') }}">
+                    <i class="fa fa-file-pdf-o"></i> <span>CV</span>
+                </a>
+            </li>
+            
+            </li>
+
+            <li class="treeview" style="height: auto;">
+                <a href="#">
+                    <i class="fa fa-file-image-o"></i> <span>Image Gallery</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu" style="display: none;">
+                    <li><a href="{{ route('admin.gallery-image.create') }}"><i class="fa fa-circle-o"></i>Add Image</a></li>
+                    <li><a href="{{ route('admin.gallery-image.index') }}"><i class="fa fa-circle-o"></i>Manage News</a></li>
+                </ul>
+            </li>
+
+            
+
         </ul>
     </section>
-    <!-- /.sidebar -->
 </aside>
