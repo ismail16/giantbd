@@ -104,7 +104,8 @@
                 <div class="conact_page_form" style="padding: 25px 200px 50px 200px;">
                     <h3 style="padding-bottom: 25px;" class="text-center t_h3">SAY HELLO TO GIANT</h3>
                     
-                    <form action="/contact/?process=insert_contact" method="post">
+                    <form action="{{ route('contact_post')}}" method="post">
+                        @csrf
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
@@ -120,7 +121,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <textarea name="msg" id="message" class="form-control" rows="9" cols="25" required="required" placeholder="Message"></textarea>
+                                    <textarea name="message" id="message" class="form-control" rows="9" cols="25" required="required" placeholder="Message"></textarea>
                                 </div>
                             </div>
                             <div class="col-md-12 text-center">

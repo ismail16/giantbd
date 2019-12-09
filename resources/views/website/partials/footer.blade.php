@@ -309,7 +309,7 @@
     <?php } ?>
 
     <?php if(strpos($_SERVER['REQUEST_URI'], "take_a_tour") !== false){ ?>
-        <script src={{asset('frontend_assets/assets_front/js/lightGallery_min.js')}}"></script>
+        <script src="{{asset('frontend_assets/assets_front/js/lightGallery_min.js')}}"></script>
 
     <?php } ?>
 

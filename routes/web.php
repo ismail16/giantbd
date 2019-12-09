@@ -11,7 +11,13 @@ Route::get('/our_pride_bangladesh', 'Frontend\PagesController@our_pride_banglade
 Route::get('/contact', 'Frontend\PagesController@contact')->name('contact');
 Route::get('/admin-login', 'Frontend\PagesController@login')->name('admin.login');
 Route::get('/news_details', 'Frontend\PagesController@news_details')->name('news_details');
+
 Route::get('/single_news/{id}', 'Frontend\PagesController@single_news')->name('single_news');
+
+Route::get('/job_announcement', 'Frontend\PagesController@job_announcement')->name('job_announcement');
+Route::get('/show_jobs/{id}', 'Frontend\PagesController@show_jobs')->name('show_jobs');
+Route::post('/cv-post', 'Frontend\PagesController@cv_post')->name('cv_post');
+Route::post('/contact-post', 'Frontend\PagesController@contact_post')->name('contact_post');
 
 
 Auth::routes();
@@ -23,6 +29,8 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin', 'namespace' => 'Admin', 'mi
     Route::resource('news', 'NewsController');
     Route::resource('gallery-image', 'GalleryImageController');
     Route::resource('cv', 'CvController');
+    Route::resource('post-job', 'PostJobController');
+    Route::resource('contact', 'ContactController');
 });
 
 // //======================================== Author route==================================

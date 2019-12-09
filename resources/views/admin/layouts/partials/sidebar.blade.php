@@ -37,9 +37,19 @@
                     <i class="fa fa-file-pdf-o"></i> <span>CV</span>
                 </a>
             </li>
-            
+
+            <li class="">
+                <a href="{{ route('admin.post-job.index') }}">
+                    <i class="fa fa-bullhorn"></i> <span>Post Job</span>
+                </a>
             </li>
 
+            <li class="">
+                <a href="{{ route('admin.contact.index') }}">
+                    <i class="fa fa-bullhorn"></i> <span>Message</span>
+                </a>
+            </li>
+            
             <li class="treeview" style="height: auto;">
                 <a href="#">
                     <i class="fa fa-file-image-o"></i> <span>Image Gallery</span>

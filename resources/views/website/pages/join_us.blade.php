@@ -3,6 +3,14 @@
 @section('content')
 
 <div class="container" id="next_section">
+        @if ($message = Session::get('success'))
+            <div style="text-align: -webkit-center; position: absolute; top: 54px; left: 25%; width: 60%;">
+                <div class="alert alert-success " style="width: 30%;padding: 3px 10px;margin: 0px;text-align: center;">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                        {{ $message }}
+                </div>
+            </div>
+        @endif
         <div class="row">
             <div class="col-md-4 padding_div">
                 <img class="img-responsive" src="{{asset('frontend_assets/assets_front/images/CareerTopLeft.jpg')}}" alt="news">
@@ -19,7 +27,7 @@
                                 <h3 class="text-center">PICK YOUR FIT</h3>
                                 <p class="text-center">Come work with us & make a world that inspires human connection!</p>
                                 
-                                <a href="/job_announcement" class="btn btn-info btn-sm">
+                                <a href="{{ route('job_announcement') }}" target="_blank" class="btn btn-info btn-sm">
                                     <span class="glyphicon glyphicon-plus-sign"></span> See jobs 
                                 </a>
                                 <a href="#contactModal" data-toggle="modal" class="btn btn-info btn-sm">
@@ -79,7 +87,9 @@
                     <div class="container">
                         <div class="row">
                             <div class="col col-md-12">
-                                <form action="/join_us/?process=cv_insert" method="post" enctype="multipart/form-data">
+                                <form role="form" action="{{ route('cv_post') }}" method="post" enctype="multipart/form-data">
+                                {{csrf_field()}}
+
                                     <div class="form-group required">
                                         <p class='control-label'>Name</p>
                                         <input type="text" name="name" class="form-control" placeholder="Enter your name here">
@@ -121,7 +131,7 @@
 
                                     <div class="form-group">
                                         <p for="exampleInputFile">CV (DOC/PDF) </p>
-                                        <input type="file" name="cv_file" class="form-control-file">
+                                        <input type="file" name="cv" class="form-control-file">
                                     </div>
 
                                     <ul style="text-align: right;" class="media-date text-uppercase reviews list-inline">
