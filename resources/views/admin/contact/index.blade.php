@@ -59,7 +59,7 @@
 
                                 <td>{{$Contact->created_at->format('d M Y')}}</td>
                                 <td class="text-center">
-                                    <a href="{{ route('admin.contact.show',$Contact->id ) }}" target="_blank" 
+                                    <a href="{{ route('admin.contact.show',$Contact->id ) }}" 
                                        class="btn btn-xs btn-primary"><i class="fa fa-eye"></i></a>
                                     <form action="{{ route('admin.contact.destroy',$Contact->id ) }}" method="post"
                                           style="display: inline;"

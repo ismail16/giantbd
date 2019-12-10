@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 
-@section('title', 'Create Image')
+@section('title', 'Message Show')
 
 @push('css')
 @endpush
@@ -11,7 +11,7 @@
                 <div class="col-md-8">
                     <div class="box box-primary">
                         <div class="box-header with-border">
-                          <h3 class="box-title">Contact Show</h3>
+                          <h3 class="box-title">Message Show</h3>
                         </div>
                         <form role="form" action="" method="post" enctype="multipart/form-data">
 
@@ -30,8 +30,7 @@
                                 </div>
                             </div>
                             <div class="box-footer">
-                            <a href="{{ route('admin.contact.index') }}" class="btn btn-primary">Back</a>
-                                <!-- <button type="submit" name="submit" class="btn btn-primary">Update</button> -->
+                                <a href="{{ route('admin.contact.index') }}" class="btn btn-primary"><i class="fa fa-angle-left"></i> Back</a>
                             </div>
                         </form>
                     </div>

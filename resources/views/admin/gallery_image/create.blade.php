@@ -5,6 +5,14 @@
 @push('css')
 @endpush
 @section('content')
+     @if ($message = Session::get('success'))
+        <div style="text-align: -webkit-center; position: absolute; top: 54px; left: 25%; width: 60%;">
+            <div class="alert alert-success " style="width: 30%;padding: 3px 10px;margin: 0px;text-align: center;">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                    {{ $message }}
+            </div>
+        </div>
+    @endif
     <div class="content-wrapper">
         <section class="content">
             <div class="row">

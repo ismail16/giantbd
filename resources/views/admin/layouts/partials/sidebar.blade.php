@@ -59,12 +59,16 @@
                 </a>
                 <ul class="treeview-menu" style="display: none;">
                     <li><a href="{{ route('admin.gallery-image.create') }}"><i class="fa fa-circle-o"></i>Add Image</a></li>
-                    <li><a href="{{ route('admin.gallery-image.index') }}"><i class="fa fa-circle-o"></i>Manage News</a></li>
+                    <li><a href="{{ route('admin.gallery-image.index') }}"><i class="fa fa-circle-o"></i>Manage Image</a></li>
                 </ul>
             </li>
 
-            
-
         </ul>
+
+        <style type="text/css">
+            .sidebar-menu>li>a {
+                border-bottom: 1px solid #445258;
+            }
+        </style>
     </section>
 </aside>
