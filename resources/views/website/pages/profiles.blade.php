@@ -3,6 +3,13 @@
 @section('content')
 
     <!-- start profile  -->
+    <style type="text/css">
+        .profile_desc p{
+        max-height: 400px;
+    text-align: justify;
+    font-family: cursive;
+    }
+    </style>
     <section id="next_section" style="padding-top: 50px; padding-bottom: 30px" class="container our_leader" id="section-counter">
         <h2 class="heading-secondary" style="padding-bottom: 50px; padding-left: 66px; font-size: 1.8rem !important;">Our Leaders</h2>
         <div id="carouselExample" class="carousel slide" data-ride="carousel" data-interval="9000">
@@ -274,7 +281,7 @@
 
     <style type="text/css">
         .modal-body-row{
-            height: 400px;
+            /*height: 400px;*/
         }
         .profile_desc{
             overflow: auto;
