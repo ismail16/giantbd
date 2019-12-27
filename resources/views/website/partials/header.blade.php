@@ -9,13 +9,15 @@
         <meta name="csrf-token" content="eW12OWFsTWQBLkYPVB1gHk4iBQECWyhUFhhPCDsfeAILVTRYIF0uHQ==">
         <meta name="msapplication-config" content="images/static/browserconfig.xml">
         <meta name="theme-color" content="#ffffff">
-        <!--<link href="https://fonts.googleapis.com/css?family=Sofia" rel="stylesheet">-->
+        <!-- <link href="https://fonts.googleapis.com/css?family=Sofia" rel="stylesheet"> -->
+
+
         
-        <link href="{{asset('frontend_assets/assets_front/fonts/Sofia-Pro-Medium.ttf')}}" rel="stylesheet">
-        <link href="{{asset('frontend_assets/assets_front/fonts/Sofia-Pro-SemiBold.ttf')}}" rel="stylesheet">
+        <link href="{{asset('frontend_assets/assets_front/fonts/SofiaProMedium.ttf')}}" rel="stylesheet">
+        <link href="{{asset('frontend_assets/assets_front/fonts/SofiaProSemiBold.ttf')}}" rel="stylesheet">
         <link href="{{asset('frontend_assets/assets_front/fonts/sofiapro-light.otf')}}" rel="stylesheet">
-        <title>
-            Giant Group - Home        </title>
+
+        <title> Giant Group - Home </title>
         <link rel="stylesheet" id="MyStyle-css" href="{{asset('frontend_assets/assets_front/css/news_bootstrap.min.css')}}" type="text/css" media="all">
         <link rel="stylesheet" id="MyStyle1-css" href="{{asset('frontend_assets/assets_front/css/news_style.css')}}" type="text/css" media="all">
         <link rel="stylesheet" id="MyStyle2-css" href="{{asset('frontend_assets/assets_front/css/font.css')}}" type="text/css" media="all">
@@ -24,7 +26,7 @@
         <link rel="stylesheet" media="all" href="{{asset('frontend_assets/assets_front/css/circle.css')}}" >
         <link rel="stylesheet" media="all" href="{{asset('frontend_assets/assets_front/css/style.css')}}" >
         <link rel="stylesheet" href="{{asset('frontend_assets/assets_front/home_slider/slider.css')}}">
-        <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
        
         <?php if(strpos($_SERVER['REQUEST_URI'], "fbclid") !== false || strpos($_SERVER['REQUEST_URI'], "join_us") !== false || strpos($_SERVER['REQUEST_URI'], "take_a_tour") !== false){ ?>
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -226,10 +228,10 @@
 
     <body class="home-page">
         <script type="text/javascript">
-            var site_url_info = {
-                baseUrl: 'http://test.com',
-                themeUrl: 'http://test.com/themes/real_estate'
-            }
+            //var site_url_info = {
+              //  baseUrl: 'http://test.com',
+                //themeUrl: 'http://test.com/themes/real_estate'
+            //}
         </script>
 
         <div class="site-main-wrapper">
@@ -264,47 +266,47 @@
                         <div class="menu-inner-wrapper">
                             <span class="menu-svg-animation-holder">
 
-                                <svg id="home-giant" version="1.1" class="svg-animation" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <svg id="home-giant" version="1.1" class="svg-animation" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
                                     <image x="0" y="60" width="700" height="133" xlink:href="{{asset('frontend_assets/assets_front/icons/giant/home-giant.png')}}"
                                     />
                                 </svg>
 
-                                <svg id="profile-icon" version="1.1" class="svg-animation" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <svg id="profile-icon" version="1.1" class="svg-animation" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
                                     <image x="0" y="0" width="700" height="264" xlink:href="{{asset('frontend_assets/assets_front/icons/giant/profile-giant-final.png')}}"
                                     />
                                 </svg>
 
-                                <svg id="sustainability-icon" version="1.1" class="svg-animation" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <svg id="sustainability-icon" version="1.1" class="svg-animation" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
                                     <image x="0" y="0" width="700" height="264" xlink:href="{{asset('frontend_assets/assets_front/icons/giant/sustainability-icon.png')}}"
                                     />
                                 </svg>
 
-                                <svg id="take-a-tour-giant" version="1.1" class="svg-animation" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <svg id="take-a-tour-giant" version="1.1" class="svg-animation" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
                                     <image x="0" y="0" width="700" height="264" xlink:href="{{asset('frontend_assets/assets_front/icons/giant/Take_a_Tour.png')}}"
                                     />
                                 </svg>
 
-                                <svg id="our-concerns" version="1.1" class="svg-animation" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <svg id="our-concerns" version="1.1" class="svg-animation" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
                                     <image x="0" y="0" width="700" height="264" xlink:href="{{asset('frontend_assets/assets_front/icons/giant/our-concerns.png')}}"
                                     />
                                 </svg>
 
-                                <svg id="future-icon" version="1.1" class="svg-animation" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <svg id="future-icon" version="1.1" class="svg-animation" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
                                     <image x="0" y="0" width="700" height="264" xlink:href="{{asset('frontend_assets/assets_front/icons/giant/Giant_Future.png')}}"
                                     />
                                 </svg>
 
-                                <svg id="career-icon" version="1.1" class="svg-animation" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <svg id="career-icon" version="1.1" class="svg-animation" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
                                     <image x="0" y="0" width="700" height="264" xlink:href="{{asset('frontend_assets/assets_front/icons/giant/Career.png')}}"
                                     />
                                 </svg>
 
-                                <svg id="pride-bangladesh" version="1.1" class="svg-animation" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <svg id="pride-bangladesh" version="1.1" class="svg-animation" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
                                     <image x="0" y="0" width="700" height="300" xlink:href="{{asset('frontend_assets/assets_front/icons/giant/map-bangladesh-giant.png')}}"
                                     />
                                 </svg>
 
-                                <svg id="contact-icon" version="1.1" class="svg-animation" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <svg id="contact-icon" version="1.1" class="svg-animation" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
                                     <image x="0" y="0" width="700" height="264" xlink:href="{{asset('frontend_assets/assets_front/icons/giant/take-a-tour-giant.png')}}"
                                     />
                                 </svg>

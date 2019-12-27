@@ -14,7 +14,7 @@
                             <li><a href="/join_us">CAREER</a></li>
                         </ul>
                         <ul class="social-list list-inline">
-                            <li><p style="color: #bfbfbf; text-transform: uppercase; font-size: 14px !important;">© GIANT GROUP 2018. DEVELOPED BY <a style="color: #ff7800; text-transform: capitalize;" class="all_right_reserve_a" target="_blank" href="http://webxltd.com/">WebX</a></p></li>
+                            <li><p style="color: #bfbfbf; text-transform: uppercase; font-size: 14px !important;">© GIANT GROUP 2018. DEVELOPED BY <a style="color: #ff7800; text-transform: capitalize;" class="all_right_reserve_a" target="_blank" href="https://webxltd.com/">WebX</a></p></li>
                         </ul>
                     </div>
                 </div>
