@@ -458,6 +458,8 @@
 
                                         <a data-target="contact-icon" class="menu__item main-menu-item" href="{{ route('contact') }}">Contact Us</a>
 
+                                        <a data-target="contact-icon" class="menu__item main-menu-item" href="http://mail.giantbd.com">Mail</a>
+
                                         <div class="navbar_socail_link">               
                                             <ul>
                                                 <li><a href="#"><i class="fa fa-facebook"></i></a></li>
