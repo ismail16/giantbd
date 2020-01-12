@@ -11,7 +11,7 @@ class CvController extends Controller
 {
    public function index()
     {
-        $cvs = Cv::all();
+        $cvs = Cv::orderBy('id', 'desc')->get();
         return view('admin.cv.index',compact('cvs'));
     }
 
